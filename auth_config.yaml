@@ -1,0 +1,32 @@
+black_lists:
+    - "*.dnslog.cn"
+    - "*.ceye.io"
+    - "*.fofa.so"
+    - "*.shodan.io"
+    - "*.github.com"
+     
+request_package:
+  headers:
+    - Cookie
+    - Token
+    - Authorization
+
+  black_file_suffix:
+    - png
+    - jpg
+    - js
+    - css
+
+response_package:
+  headers:
+    - Location
+    - Set-Cookie
+
+  body_json_string:
+    status: false,0
+    code: 1,2
+    result: null,0
+    success: 0
+
+    
+
