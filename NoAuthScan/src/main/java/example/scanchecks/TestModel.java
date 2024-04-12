@@ -85,14 +85,14 @@ public class TestModel {
         if (later_package.response().statusCode() / 100 == 2) {
             //返回包请求头字段分析
             Object result2 = Yaml_Util.find_config(file_path, config_model.response_headers);
-            Boolean flag1 = config_model.response_headers_analyze(result2, baseRequestResponse);
+            Boolean flag1 = config_model.response_headers_analyze(result2, later_package);
             if (!flag1) {
                 return null;
             }
 
             //分析返回包中的json数据进一步判断是否未授权
             Object result3 = Yaml_Util.find_config(file_path, config_model.body_json_string);
-            Boolean flag2 = config_model.json_analyze(api, result3, baseRequestResponse);
+            Boolean flag2 = config_model.json_analyze(api, result3, later_package);
             if (!flag2) {
                 return null;
             }
