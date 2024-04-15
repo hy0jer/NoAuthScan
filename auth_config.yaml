@@ -1,32 +1,33 @@
-black_lists:
+black_lists:                  #配置扫描域名白名单，以下声明的域名 ip都不会进行扫描
     - "*.dnslog.cn"
     - "*.ceye.io"
     - "*.fofa.so"
     - "*.shodan.io"
     - "*.github.com"
      
-request_package:
-  headers:
+request_package:  
+  headers:                    #配置检测的请求包鉴权字段，以下声明的字符串都会被认定为鉴权字段
     - Cookie
     - Token
     - Authorization
 
-  black_file_suffix:
+  black_file_suffix:          #配置扫描文件白名单，以下声明的后缀名相关的请求包不会进行扫描
     - png
     - jpg
     - js
     - css
 
 response_package:
-  headers:
+  headers:                    #配置返回包的请求头检测字段，返回包包含如下字段均会被认定为不存在未授权访问 问题
     - Location
     - Set-Cookie
 
-  body_json_string:
-    status: false,0
+  body_json_string:           #配置返回包json数据的检测键值对，以下声明的key value会被认定为鉴权失败字段，支持一对多的键值对写法
+    status: false,0,-1
     code: 1,2
     result: null,0
     success: 0
+    errorCode: "002"
 
     
 
