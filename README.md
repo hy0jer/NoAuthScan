@@ -7,7 +7,7 @@ NoAuthScan 是基于Burp Suite提供的MontoyaApi开发的插件，可用于检�
 ### **运行环境建议**
 
 ```
-JDK  >= 17.0.9
+JDK  >= 17.0.4
 
 burpsuite version >= 2023.12.1
 ```
